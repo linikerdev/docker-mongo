@@ -1,0 +1,14 @@
+# Use root/example as user/password credentials
+version: "3.4"
+
+services:
+  mongo:
+    build: .
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: admin
+      MONGO_INITDB_ROOT_PASSWORD: prisma
+      MONGO_INITDB_ROOT_DATABASE: db
+      MONGO_REPLICA_HOST: localhost
+      MONGO_REPLICA_PORT: 27017
+    ports:
+      - '27017:27017'
